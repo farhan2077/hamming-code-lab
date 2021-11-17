@@ -1,4 +1,4 @@
-# Hamming code generation, error dectection & correction.
+# Hamming code generation, error detection & correction.
 
 _Warning :warning:: Please note that the solution used here is not optimal since this works for 7-bit data only._
 
@@ -26,6 +26,6 @@ cd hamming-code-lab
 python main.py
 ```
 
-## License
+## Extra
 
-Variable reference used in the code can be found in [reference.docx](./reference.docx)
+You may read [reference.docx](./reference.docx) to better understand how the variables are used in the program.
