@@ -1,5 +1,8 @@
 # Hamming code generation, error detection & correction.
 
+![made with python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=flat-square)
+![code style: prettier](https://img.shields.io/badge/code%20style-autopep8-brightgreen?style=flat-square)
+
 _Warning :warning:: Please note that the solution used here is not optimal since this works for 7-bit data only._
 
 ## Prerequisites:
