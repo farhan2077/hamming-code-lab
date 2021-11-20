@@ -4,6 +4,8 @@ p1, p2, p4, p8 = parity bit
 gcw = generated code word
 rcw = received code word
 cwc = corrected code word
+error_index=error index for rcw [in normal manner]
+error_pos=error position according to hamming code
 """
 import os
 
@@ -13,12 +15,12 @@ print("∎ Hamming code generation, error dectection & correction ∎")
 print("⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅")
 print("Choose any option form below ↓\n")
 option = int(input(
-    '[1] Generate hamming code\n[2] Find error in received code word\n\nEnter you option: '))
+    "[1] Generate hamming code\n[2] Find error in received code word\n\nEnter you option: "))
 print("⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅")
 
 if option == 1:
     dw = str(input("Enter the 7-bit data word: "))
-    # dw = str(1110100)
+    # example dw = str(1110100)
 
     def generate_codeword(dw):
         # convert int number to a list
@@ -47,8 +49,6 @@ if option == 1:
 
 elif option == 2:
     rcw = str(input("Enter the the received code word: "))
-    # rcw = str(11110101011)
-    # rcw = str(10001101100)
 
     def check_error_index(rcw):
         rcw_list = [x for x in rcw]
@@ -70,6 +70,7 @@ elif option == 2:
 
         parity = str(p8)+str(p4)+str(p2)+str(p1)
 
+        # get error index from parity bit if any
         if parity == "0000":
             error_index = 0  # error_pos = 0
         elif parity == "0001":
